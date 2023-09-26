@@ -2,17 +2,27 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import { Home } from './pages/Home';
-import { About } from './pages/About';
+import { UserFlex } from './pages/UserFlex';
+import { UserGrid } from './pages/UserGrid';
+import { NotFound } from './pages/NotFound';
 
 const App = (): JSX.Element => (
   <Routes>
     <Route 
       element={<Home />}
-      path='*' 
+      path='/' 
     />
     <Route 
-      element={<About />}
-      path='/about'
+      element={<UserFlex />}
+      path='/userflex'
+    />
+    <Route 
+      element={<UserGrid />}
+      path='/usergrid'
+    />
+    <Route 
+      element={<NotFound />}
+      path='*'
     />
   </Routes>
 )
