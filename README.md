@@ -1,6 +1,6 @@
 # Getting Started with Userverse Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and is about an user APP.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and is about a user APP.
 
 ## Available Scripts
 
