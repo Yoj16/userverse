@@ -1,5 +1,5 @@
 {
-    "extends": "@okp4", // may be combined with other shareable configurations
+    "extends": "@okp4",
     "parserOptions": {
         "project": "./tsconfig.json"
     }
