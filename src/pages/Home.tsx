@@ -1,8 +1,14 @@
 import React from "react";
+import NavBar from "../components/navbar/NavBar";
 
 export const Home = (): JSX.Element => (
-    <header>
-        <h1>This is a Homepage.</h1>
-    </header>
+    <>
+        <header>
+            <NavBar />
+        </header>
+        <body>
+            <h1>Welcome to the... userverse 🪐</h1>
+        </body>
+    </>
 )
     
