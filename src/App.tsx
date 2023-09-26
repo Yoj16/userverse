@@ -1,22 +1,19 @@
 import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
+import { Home } from './pages/Home';
+import { About } from './pages/About';
 
 const App = (): JSX.Element => (
-  <div className="App">
-    <header className="App-header">
-      <p>
-        Edit <code>src/App.tsx</code> and save to reload.
-      </p>
-      <a
-        className="App-link"
-        href="https://reactjs.org"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        Learn React
-      </a>
-    </header>
-  </div>
+  <Routes>
+    <Route 
+      element={<Home />}
+      path='*' 
+    />
+    <Route 
+      element={<About />}
+      path='/about'
+    />
+  </Routes>
 )
-
 export default App;

@@ -35,6 +35,7 @@
     ]
   },
   "devDependencies": {
-    "@okp4/eslint-config": "^2.0.0"
+    "@okp4/eslint-config": "^2.0.0",
+    "react-router-dom": "^6.16.0"
   }
 }
