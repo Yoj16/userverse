@@ -1,0 +1,12 @@
+.container {
+    display: flex;
+    width: 400px;
+    align-items: center;
+    flex-direction: column;
+    background-color: goldenrod;
+
+    img { 
+        max-width: 100%;
+        height: auto;
+    }
+}
