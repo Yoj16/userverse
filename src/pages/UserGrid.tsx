@@ -12,9 +12,10 @@ export const UserGrid = (): JSX.Element => {
                 <Card 
                 id={user.id}
                 key={user.id}
-                picture="image.jpg"
+                url="image.jpg"
                 title={user.name}
                 description={user.description}
+                size="large"
                 />
             ))}
         </header>
