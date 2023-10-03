@@ -1,23 +1,24 @@
 import { FC } from 'react';
+import '../card/Card.scss'
 
 type CardProps = {
-    id: number
+    id?: number
     title: string
-    picture?: string
+    url?: string
     description?: string
+    size?: 'small' | 'medium' | 'large'
 }
 
-export const Card: FC<CardProps> = ({ id, title, picture, description }) => {
-    return (
-        <div key={id} className='container'>
-            <div className='image-block'>
-                <img src={picture} alt={picture} className='card-image'/>
-            </div>
-            <div className='text-block'>
-                <h1>{title}</h1>
-                <p>{description}</p>
-            </div>
+export const Card: FC<CardProps> = ({ id, title, url, description, size = 'medium'}) => (
+    <div key={id} className={`card-container ${size}`}>
+        <div className='image-block'>
+            <img src={url} alt={url} className='card-image'/>
         </div>
-    )
-}
+        <div className='text-block'>
+            <h1>{title}</h1>
+            {description && <p>{description}</p>}
+        </div>
+    </div>
+)
+
 export default Card;
