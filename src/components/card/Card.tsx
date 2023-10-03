@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import classNames from 'classnames';
 import '../card/Card.scss'
 
 type CardProps = {
@@ -10,7 +11,7 @@ type CardProps = {
 }
 
 export const Card: FC<CardProps> = ({ id, title, url, description, size = 'medium'}) => (
-    <div key={id} className={`card-container ${size}`}>
+    <div key={id} className={classNames('card-container', size)}>
         <div className='image-block'>
             <img src={url} alt={url} className='card-image'/>
         </div>
