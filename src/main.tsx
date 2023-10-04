@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './main.scss';
 import { Home } from './pages/Home';
-import { UserFlex } from './pages/UserFlex';
+import { UserFlex } from './pages/userflex/UserFlex';
 import { UserGrid } from './pages/UserGrid';
 import { NotFound } from './pages/NotFound';
 
