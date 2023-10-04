@@ -1,11 +1,10 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './main.scss';
 import { Home } from './pages/Home';
 import { UserFlex } from './pages/UserFlex';
 import { UserGrid } from './pages/UserGrid';
 import { NotFound } from './pages/NotFound';
-import UserContext from "../src/utils/UserContext";
 
 type User = {
   id: number
@@ -36,6 +35,8 @@ type ApiUser = {
       bs: string
   }
 }
+
+export const UserContext = React.createContext<User[]>([]);
 
 export const App = (): JSX.Element => {
   const [users, setUsers] = useState<User[]>([]);
@@ -78,5 +79,3 @@ export const App = (): JSX.Element => {
     </UserContext.Provider>
   )
 }
-
-export default App;

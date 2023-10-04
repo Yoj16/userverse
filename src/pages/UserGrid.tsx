@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import Card from "../components/card/Card";
-import UserContext from "../utils/UserContext";
+import { UserContext } from "../main";
 
 export const UserGrid = (): JSX.Element => {
     const users = useContext(UserContext);
@@ -14,7 +14,6 @@ export const UserGrid = (): JSX.Element => {
             {users.map((user) => (
                 <Card 
                 id={user.id}
-                url="image.jpg"
                 title={user.name}
                 description={user.description}
                 size="large"
