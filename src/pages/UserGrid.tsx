@@ -1,10 +1,22 @@
-import React from 'react';
+import { useContext } from "react";
+import Card from "../components/card/Card";
+import UserContext from "../utils/UserContext";
 
-type User = {
-    id: number
-    name: string
-    description: string
-  }
+export const UserGrid = (): JSX.Element => {
+    const users = useContext(UserContext);
 
-const UserContext = React.createContext<User[]>([]);
-export default UserContext
+    return (
+        <section>
+            <h1>This is the UserGrid Page.</h1>
+            {users.map((user) => (
+                <Card 
+                id={user.id}
+                url="image.jpg"
+                title={user.name}
+                description={user.description}
+                size="large"
+                />
+            ))}
+        </section>   
+    )
+}
