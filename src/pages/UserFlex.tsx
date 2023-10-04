@@ -6,8 +6,11 @@ export const UserFlex = (): JSX.Element => {
     const users = useContext(UserContext);
 
     return (
-        <section>
-            <h1>This is the UserFlex Page.</h1>
+        <>
+            <header>
+                <h1>This is the UserFlex Page.</h1>
+            </header>
+            <section>
             {users.map((user) => (
                 <Card 
                 id={user.id}
@@ -16,6 +19,7 @@ export const UserFlex = (): JSX.Element => {
                 description={user.description}
                 />
             ))}
-        </section>
+            </section>
+        </>
     )
 }

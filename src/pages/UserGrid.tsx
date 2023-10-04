@@ -6,8 +6,11 @@ export const UserGrid = (): JSX.Element => {
     const users = useContext(UserContext);
 
     return (
-        <section>
-            <h1>This is the UserGrid Page.</h1>
+        <>
+            <header>
+                <h1>This is the UserGrid Page.</h1>
+            </header>
+            <section>
             {users.map((user) => (
                 <Card 
                 id={user.id}
@@ -17,6 +20,7 @@ export const UserGrid = (): JSX.Element => {
                 size="large"
                 />
             ))}
-        </section>   
+            </section>
+        </>
     )
 }
