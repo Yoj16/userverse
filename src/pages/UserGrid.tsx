@@ -1,7 +1,10 @@
-import React from "react";
+import React from 'react';
 
-export const UserGrid = (): JSX.Element => (
-    <header>
-        <h1>This is the UserGrid Page.</h1>
-    </header>
-)
+type User = {
+    id: number
+    name: string
+    description: string
+  }
+
+const UserContext = React.createContext<User[]>([]);
+export default UserContext
