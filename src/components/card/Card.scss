@@ -1,4 +1,4 @@
-@mixin card-style-animation($position, $back-color) {
+@mixin card-style($position, $back-color) {
     &:nth-child(#{$position}) {
         background-color: $back-color;
         &:hover {
@@ -17,8 +17,8 @@
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
     transition: opacity 0.4s;
 
-    @include card-style-animation(even, darkcyan);
-    @include card-style-animation(odd, cadetblue);
+    @include card-style(even, darkcyan);
+    @include card-style(odd, cadetblue);
 
     &.small {
         width: 200px;
@@ -35,7 +35,7 @@
     }
     
     .image-block {
-        height: 200px;
+        height: 50%;
         width: 100%;
         overflow: hidden;
 
@@ -45,8 +45,8 @@
     }
 
     .text-block {
-        width: 80%;
-        padding: 20px 10px;
+        width: 100%;
+        height: 50%;
         color: white;
         display: flex;
         flex-direction: column;
@@ -54,8 +54,12 @@
         align-items: center;
         text-align: center;
         word-break: break-word;
-        overflow-wrap: break-word;
 
+        p {
+            height: auto;
+            padding: 0 10px;
+            overflow: scroll;
+        }
         h1 {
             &::after {
                 content: '';
@@ -68,6 +72,7 @@
                 background-color: white;
             }
         }
+
     }
 
 }
