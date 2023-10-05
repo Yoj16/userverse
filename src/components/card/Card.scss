@@ -1,24 +1,41 @@
+@mixin card-style($position, $back-color) {
+    &:nth-child(#{$position}) {
+        background-color: $back-color;
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}
+
 .card-container {
     display: flex;
+    margin: 15px;
     align-items: center;
     flex-direction: column;
-    background-color: darkcyan;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    transition: opacity 0.4s;
+
+    @include card-style(even, darkcyan);
+    @include card-style(odd, cadetblue);
 
     &.small {
-        width: 250px;
+        width: 200px;
+        height: 300px;
     }
+
     &.medium {
-        width: 300px;
+        width: 250px;
+        height: 350px;
     }
     &.large {
-        width: 350px;
+        width: 300px;
+        height: 400px;
     }
     
     .image-block {
-        height: 200px;
+        height: 50%;
         width: 100%;
         overflow: hidden;
 
@@ -26,15 +43,52 @@
             width: 100%;
         }
     }
+
     .text-block {
-        padding: 20px;
+        width: 100%;
+        height: 50%;
         color: white;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        word-break: break-word;
+
         p {
-            margin-top: 0;
+            height: auto;
+            padding: 0 10px;
+            overflow-y: auto;
+
+            &::-webkit-scrollbar {
+                width: 4px;
+            }
+
+            &::-webkit-scrollbar-track {
+                background: grey;
+                border-radius: 2px;
+            }
+            
+            &::-webkit-scrollbar-thumb {
+                background: white;
+                margin-right: 5px;
+                border-radius: 2px;
+            }
         }
+
+        h1 {
+            &::after {
+                content: '';
+                display: block;
+                position: relative;
+                width: 50%;
+                bottom: -15px;
+                left: 25%;
+                height: 1px;
+                background-color: white;
+            }
+        }
+
     }
 
 }
