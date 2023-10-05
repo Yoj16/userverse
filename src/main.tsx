@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import './main.scss';
 import { Home } from './pages/Home';
 import { UserFlex } from './pages/userflex/UserFlex';
-import { UserGrid } from './pages/UserGrid';
+import { UserGrid } from './pages/usergrid/UserGrid';
 import { NotFound } from './pages/NotFound';
 
 type User = {
