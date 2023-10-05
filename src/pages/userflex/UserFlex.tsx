@@ -1,6 +1,7 @@
 import { useContext } from "react";
-import Card from "../components/card/Card";
-import { UserContext } from "../main";
+import Card from "../../components/card/Card";
+import { UserContext } from "../../main";
+import './UserFlex.scss'
 
 export const UserFlex = (): JSX.Element => {
     const users = useContext(UserContext);
@@ -10,7 +11,7 @@ export const UserFlex = (): JSX.Element => {
             <header>
                 <h1>This is the UserFlex Page.</h1>
             </header>
-            <section>
+            <section className="section-card">
             {users.map((user) => (
                 <Card 
                 id={user.id}
