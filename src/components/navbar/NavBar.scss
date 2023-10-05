@@ -1,0 +1,36 @@
+@import '../../main.scss';
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: $blue-green;
+
+    .logo {
+        width: 150px;
+    }
+
+    .nav-list {
+        width: 40%;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            font-family: Audiowide;
+            transition: 0.3s;
+            padding: 10px 40px;
+            border-radius: 25px;
+
+            &:hover {
+                background-color: white;
+                color: $light-green;
+                font-weight: bold;
+            }
+        }
+    }
+}
