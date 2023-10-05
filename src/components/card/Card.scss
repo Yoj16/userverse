@@ -58,8 +58,24 @@
         p {
             height: auto;
             padding: 0 10px;
-            overflow: scroll;
+            overflow-y: auto;
+
+            &::-webkit-scrollbar {
+                width: 4px;
+            }
+
+            &::-webkit-scrollbar-track {
+                background: grey;
+                border-radius: 2px;
+            }
+            
+            &::-webkit-scrollbar-thumb {
+                background: white;
+                margin-right: 5px;
+                border-radius: 2px;
+            }
         }
+
         h1 {
             &::after {
                 content: '';
