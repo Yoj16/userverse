@@ -8,10 +8,11 @@ type CardProps = {
     url?: string
     description?: string
     size?: 'small' | 'medium' | 'large'
+    className?: string
 }
 
-export const Card: FC<CardProps> = ({ id, title, url, description, size = 'medium'}) => (
-    <div key={id} className={classNames('card-container', size)}>
+export const Card: FC<CardProps> = ({ id, title, url, description, size = 'medium', className}) => (
+    <div key={id} className={classNames('card-container', size, className)}>
         <div className='image-block'>
             <img src={url} alt={url} className='card-image'/>
         </div>

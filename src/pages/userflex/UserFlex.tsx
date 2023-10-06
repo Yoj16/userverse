@@ -11,7 +11,7 @@ export const UserFlex = (): JSX.Element => {
             <header>
                 <h1>This is the UserFlex Page.</h1>
             </header>
-            <section className="section-card">
+            <section className="section-card-flex">
             {users.map((user) => (
                 <Card 
                 id={user.id}
