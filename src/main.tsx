@@ -5,6 +5,7 @@ import { Home } from './pages/Home';
 import { UserFlex } from './pages/userflex/UserFlex';
 import { UserGrid } from './pages/usergrid/UserGrid';
 import { NotFound } from './pages/NotFound';
+import NavBar from './components/navbar/NavBar';
 
 type User = {
   id: number
@@ -58,6 +59,7 @@ export const App = (): JSX.Element => {
 
   return (
     <UserContext.Provider value={users}>
+      <NavBar />
       <Routes>
         <Route 
           element={<Home />}
