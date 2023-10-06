@@ -11,7 +11,7 @@ export const UserGrid = (): JSX.Element => {
             <header>
                 <h1>This is the UserGrid Page.</h1>
             </header>
-            <section className="section-card">
+            <section className="section-card-grid">
             {users.map((user) => (
                 <Card 
                 id={user.id}
