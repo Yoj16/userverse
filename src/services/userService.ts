@@ -4,9 +4,11 @@ type User = {
     id: number
     name: string
     description: string
-  }
+    picture: string
+    alt: string
+}
   
-  type ApiUser = {
+type ApiUser = {
     id: number
     name: string
     username: string
@@ -28,17 +30,34 @@ type User = {
         catchPhrase: string
         bs: string
     }
-  }
+}
+
+type ApiPicture = {
+    id: string
+    author: string
+    width: string
+    height: string
+    url: string
+    download_url: string
+}
 
 export const getUsers = async (): Promise<ApiUser[]> => {
     const response =  await fetch('https://jsonplaceholder.typicode.com/users')
       return response.json();
 };
 
-export const mapAndSaveUsers = (users: ApiUser[]): User[] => {
-    return users.map(user => ({
-        id: user.id, 
-        name: user.name, 
-        description: user.company.catchPhrase
-    }))
+export const getPictures = async (): Promise<ApiPicture[]> => {
+    const response = await fetch('https://picsum.photos/v2/list?page=1&limit=10')
+        return response.json();
 }
+
+export const mapAndSaveUsers = (users: ApiUser[], pictures: ApiPicture[]): User[] => 
+    (
+        users.map((user, index) => ({
+            id: user.id, 
+            name: user.name, 
+            description: user.company.catchPhrase,
+            picture: pictures[index].download_url,
+            alt: pictures[index].author
+        }))
+    )

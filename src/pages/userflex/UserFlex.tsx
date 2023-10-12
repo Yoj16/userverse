@@ -16,6 +16,9 @@ export const UserFlex = (): JSX.Element => {
                 <Card 
                 id={user.id}
                 title={user.name}
+                url={user.picture}
+                alt={user.alt}
+                key={user.id}
                 description={user.description}
                 />
             ))}
