@@ -6,55 +6,29 @@ import { UserFlex } from './pages/userflex/UserFlex';
 import { UserGrid } from './pages/usergrid/UserGrid';
 import { NotFound } from './pages/NotFound';
 import NavBar from './components/navbar/NavBar';
+import { getPictures, getUsers, mapAndSaveUsers } from '../src/services/userService';
 
 type User = {
   id: number
   name: string
   description: string
-}
-
-type ApiUser = {
-  id: number
-  name: string
-  username: string
-  email: string
-  address: {
-      street: string
-      suite: string
-      city: string
-      zipcode: string
-      geo: {
-          lat: string
-          lng: string
-      }
-  },
-  phone: string
-  website: string
-  company: {
-      name: string
-      catchPhrase: string
-      bs: string
-  }
+  picture: string
+  alt: string
 }
 
 export const UserContext = React.createContext<User[]>([]);
 
 export const App = (): JSX.Element => {
+
   const [users, setUsers] = useState<User[]>([]);
 
-  const mapAndSaveUsers = (users: ApiUser[]): void => {
-      const mappedUser = users.map(user => ({
-          id: user.id, 
-          name: user.name, 
-          description: user.company.catchPhrase
-      }))
-      setUsers(mappedUser);
-  }
-
   useEffect(() => {
-      fetch('https://jsonplaceholder.typicode.com/users')
-      .then(response => response.json())
-      .then(mapAndSaveUsers)
+      getUsers().then((users) => {
+        getPictures().then((pictures) => {
+          setUsers(mapAndSaveUsers(users, pictures));
+          console.log(mapAndSaveUsers(users, pictures));
+        })
+      })
   }, []);
 
   return (
