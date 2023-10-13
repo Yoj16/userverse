@@ -1,10 +1,13 @@
 @import '../../main.scss';
 
 .container {
+  margin: 100px 50px;
+  font-family: Montserrat;
+  font-weight: 700;
+  display: flex;
   .home-title {
-    font-family: Audiowide;
-    font-size: 24px;
-    color: $light-blue;
-    text-align: center;
+    align-items: center;
+    color: $white;
+    font-size: 34px;
   }
 }

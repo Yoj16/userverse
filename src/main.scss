@@ -1,14 +1,24 @@
 // Color theme 
 
-$blue-green: #008B8B;
-$light-green: #08A377;
-$dark-green: #089947;
-$light-blue: #087AA3;
-$dark-blue: #084D99;
+$primary: #aa4b6b;
+$secondary: #6b6b83;
+$tertiary: #3b8d99;
+$white: white;
 
 // Font them
 
 @font-face {
-  font-family: 'Audiowide';
-  src: url("../src/style/font/Audiowide-Regular.ttf") format("truetype");
+  font-family: 'Montserrat';
+  src: url("../src/style/font/Montserrat-VariableFont_wght.ttf") format("truetype");
+}
+@font-face {
+  font-family: 'Hind';
+  src: url("../src/style/font/Hind-Regular.ttf") format("truetype");
+}
+
+body {
+  font-family: Hind;
+  background: #aa4b6b; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #aa4b6b, #6b6b83, #3b8d99); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #aa4b6b, #6b6b83, #3b8d99); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }

@@ -1,3 +1,5 @@
+@import '../../main.scss';
+
 @mixin card-style($position, $back-color) {
     &:nth-child(#{$position}) {
         background-color: $back-color;
@@ -13,11 +15,10 @@
     flex-direction: column;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
     transition: opacity 0.4s;
 
-    @include card-style(even, darkcyan);
-    @include card-style(odd, cadetblue);
+    @include card-style(even, white);
+    @include card-style(odd, white);
 
     &.small {
         width: 200px;
@@ -45,8 +46,8 @@
 
     .text-block {
         height: 50%;
-        padding: 10px;
-        color: white;
+        padding: 0 20px;
+        color: $tertiary;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -64,18 +65,19 @@
             }
 
             &::-webkit-scrollbar-track {
-                background: grey;
+                background: white;
                 border-radius: 2px;
             }
             
             &::-webkit-scrollbar-thumb {
-                background: white;
+                background: grey;
                 margin-right: 5px;
                 border-radius: 2px;
             }
         }
 
         h1 {
+            color: $primary;
             &::after {
                 content: '';
                 display: block;
@@ -84,7 +86,7 @@
                 bottom: -15px;
                 left: 25%;
                 height: 1px;
-                background-color: white;
+                background-color: $tertiary;
             }
         }
 
