@@ -1,7 +1,15 @@
+@import '../../main.scss';
+
 .section-card-flex {
     display: flex;
     margin: 50px 30px;
     flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
+}
+
+.header-title {
+    text-align: center;
+    font-family: Audiowide;
+    color: $light-blue;
 }

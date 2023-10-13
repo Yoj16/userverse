@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './main.scss';
-import { Home } from './pages/Home';
+import { Home } from './pages/homepage/Home';
 import { UserFlex } from './pages/userflex/UserFlex';
 import { UserGrid } from './pages/usergrid/UserGrid';
 import { NotFound } from './pages/NotFound';

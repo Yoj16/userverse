@@ -9,7 +9,7 @@ export const UserFlex = (): JSX.Element => {
     return (
         <>
             <header>
-                <h1>This is the UserFlex Page.</h1>
+                <h1 className="header-title">Discover our users</h1>
             </header>
             <section className="section-card-flex">
             {users.map((user) => (

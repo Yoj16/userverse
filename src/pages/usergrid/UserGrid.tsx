@@ -9,7 +9,7 @@ export const UserGrid = (): JSX.Element => {
     return (
         <>
             <header>
-                <h1>This is the UserGrid Page.</h1>
+                <h1 className="header-title">Discover our users</h1>
             </header>
             <section className="section-card-grid">
             {users.map((user) => (
