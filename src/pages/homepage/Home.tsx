@@ -1,6 +1,7 @@
 import { useState } from "react";
 import './Home.scss';
 import { TypeAnimation } from 'react-type-animation';
+import { FilterForm } from "../../components/filterForm/FilterForm";
 
 export const Home = (): JSX.Element => (
     <section className="container">
@@ -24,6 +25,10 @@ export const Home = (): JSX.Element => (
                 style={{ fontSize: '2em', display: 'inline-block' }}
             />
         </h1>
+        <div className="search-block">
+            <h2>Search someone...</h2>
+            <FilterForm username="username" city="city" />
+        </div>
     </section>
 )
     

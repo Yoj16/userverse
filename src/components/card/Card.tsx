@@ -13,7 +13,7 @@ type CardProps = {
 }
 
 export const Card: FC<CardProps> = ({ id, title, url, description, alt, size = 'medium', className}) => (
-    <div className={classNames('card-container', size, className)}>
+    <div className={classNames('custom-card-container', size, className)}>
         <div className='image-block'>
             <img src={url} alt={alt} className='card-image'/>
         </div>

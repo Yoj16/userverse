@@ -5,9 +5,19 @@
   font-family: Montserrat;
   font-weight: 700;
   display: flex;
+  justify-content: center;
+  flex-direction: column;
+
   .home-title {
     align-items: center;
     color: $white;
     font-size: 34px;
+    margin-bottom: 100px;
+  }
+
+  .search-block {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
   }
 }
