@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import Card from "../../components/card/Card";
 import { filterUsers, getPictures, getUsers, mapAndSaveUsers } from '../../services/userService';
-import './UserPage.scss'
+import './UserFlex.scss'
+import './UserGrid.scss'
 import { useLocation } from "react-router-dom";
 
 type User = {
@@ -14,6 +15,7 @@ type User = {
 
 export const UserPage = (): JSX.Element => {
     const [users, setUsers] = useState<User[]>([]);
+    const [isChecked, setIsChecked] = useState(false);
     const location = useLocation();
 
     const fetching = () => {
@@ -37,6 +39,10 @@ export const UserPage = (): JSX.Element => {
         location.state = {}
         fetching();
     }
+
+    const checkChange = () => {
+        setIsChecked(!isChecked);
+    }
     
     useEffect(() => {
         fetching();
@@ -47,15 +53,31 @@ export const UserPage = (): JSX.Element => {
             <section className="section-top">
                 <h1 className="header-title">Discover our users</h1>
                 <div className="filter-container">
-                    <button type="button" className="btn btn-light" onClick={clearNavigate}>Delete filters</button>
+                    <button 
+                        type="button" 
+                        className="btn btn-light" 
+                        onClick={clearNavigate}
+                    >
+                        Delete filters
+                    </button>
                     <div className="form-check form-switch">
-                        <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
-                        <label className="form-check-label" htmlFor="flexSwitchCheckDefault">See this page with CSS grids</label>
+                        <input 
+                            className="form-check-input" 
+                            type="checkbox" 
+                            role="switch" 
+                            id="flexSwitchCheckDefault" 
+                            checked={isChecked} 
+                            onChange={checkChange}/>
+                        <label 
+                            className="form-check-label" 
+                            htmlFor="flexSwitchCheckDefault"
+                        >
+                            This page is set with CSS {isChecked ? "grids" : "flexbox"}
+                        </label>
                     </div>
                 </div>
             </section>
-            {/* section-card-grid */}
-            <section className="section-card-flex">
+            <section className={"section-card-" + `${isChecked ? "grid" : "flex"}`}>
                 {users.map((user) => (
                     <Card 
                     id={user.id}
@@ -64,6 +86,7 @@ export const UserPage = (): JSX.Element => {
                     alt={user.alt}
                     key={user.id}
                     description={user.description}
+                    className={isChecked ? "card-grid" : ""}
                     />
                 ))}
             </section>

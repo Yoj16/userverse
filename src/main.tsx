@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import './main.scss';
 import { Home } from './pages/homepage/Home';
-import { UserPage } from './pages/userflex/UserPage';
+import { UserPage } from './pages/userpage/UserPage';
 import { NotFound } from './pages/NotFound';
 import NavBar from './components/navbar/NavBar';
 import 'bootstrap/dist/css/bootstrap.css';
