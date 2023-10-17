@@ -13,7 +13,7 @@ export const FilterForm: FC<FilterFormProps> = ({}) => {
   const navigate = useNavigate();
 
   const searchUser = () => {
-    navigate('/userflex', {state: {userValue: userValue, cityValue: cityValue}});
+    navigate('/users', {state: {userValue: userValue, cityValue: cityValue}});
   }
 
   return (

@@ -9,10 +9,7 @@ const NavBar = (): JSX.Element => (
                 <NavLink to="/">Home</NavLink>
             </li>
             <li>
-                <NavLink to="/userflex">UserFlex</NavLink>
-            </li>
-            <li>
-                <NavLink to="/usergrid">UserGrid</NavLink>
+                <NavLink to="/users">Our Users</NavLink>
             </li>
         </ul>
     </nav>

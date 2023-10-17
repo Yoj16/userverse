@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Card from "../../components/card/Card";
 import { filterUsers, getPictures, getUsers, mapAndSaveUsers } from '../../services/userService';
-import './UserFlex.scss'
+import './UserPage.scss'
 import { useLocation } from "react-router-dom";
 
 type User = {
@@ -12,7 +12,7 @@ type User = {
     alt: string
   }
 
-export const UserFlex = (): JSX.Element => {
+export const UserPage = (): JSX.Element => {
     const [users, setUsers] = useState<User[]>([]);
     const location = useLocation();
 
