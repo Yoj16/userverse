@@ -18,7 +18,7 @@ export const Card: FC<CardProps> = ({ id, title, url, description, alt, size = '
             <img src={url} alt={alt} className='card-image'/>
         </div>
         <div className='text-block'>
-            <h1>{title}</h1>
+            <h3>{title}</h3>
             {description && <p>{description}</p>}
         </div>
     </div>

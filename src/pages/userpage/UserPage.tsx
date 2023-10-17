@@ -53,15 +53,30 @@ export const UserPage = (): JSX.Element => {
             <section className="section-top">
                 <h1 className="header-title">Discover our users</h1>
                 <div className="filter-container">
-                    <button type="button" className="btn btn-light" onClick={clearNavigate}>Delete filters</button>
+                    <button 
+                        type="button" 
+                        className="btn btn-light" 
+                        onClick={clearNavigate}
+                    >
+                        Delete filters
+                    </button>
                     <div className="form-check form-switch">
-                        <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" checked={isChecked} onChange={checkChange}/>
-                        <label className="form-check-label" htmlFor="flexSwitchCheckDefault">This page is set with CSS {isChecked ? "grids" : "flexbox"}
+                        <input 
+                            className="form-check-input" 
+                            type="checkbox" 
+                            role="switch" 
+                            id="flexSwitchCheckDefault" 
+                            checked={isChecked} 
+                            onChange={checkChange}/>
+                        <label 
+                            className="form-check-label" 
+                            htmlFor="flexSwitchCheckDefault"
+                        >
+                            This page is set with CSS {isChecked ? "grids" : "flexbox"}
                         </label>
                     </div>
                 </div>
             </section>
-            {/* section-card-grid */}
             <section className={"section-card-" + `${isChecked ? "grid" : "flex"}`}>
                 {users.map((user) => (
                     <Card 
