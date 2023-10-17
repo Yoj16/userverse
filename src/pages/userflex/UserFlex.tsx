@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Card from "../../components/card/Card";
 import { filterUsers, getPictures, getUsers, mapAndSaveUsers } from '../../services/userService';
 import './UserFlex.scss'
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 type User = {
     id: number
@@ -15,7 +15,6 @@ type User = {
 export const UserFlex = (): JSX.Element => {
     const [users, setUsers] = useState<User[]>([]);
     const location = useLocation();
-    const navigate = useNavigate();
 
     const fetching = () => {
         getUsers().then((users) => {

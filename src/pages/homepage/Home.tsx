@@ -1,4 +1,3 @@
-import { useState } from "react";
 import './Home.scss';
 import { TypeAnimation } from 'react-type-animation';
 import { FilterForm } from "../../components/filterForm/FilterForm";
