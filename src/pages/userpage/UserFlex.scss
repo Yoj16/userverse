@@ -29,16 +29,5 @@
             margin-left: 10px;
             margin-right: 10px;
         }
-
-        .form-switch {
-            color: $white;
-            .form-check-input:checked {
-                background-color: $primary!important;
-                border-color: $primary!important;
-            }
-            .form-check-input:focus {
-                box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25);
-            }
-        }
     }
 }
