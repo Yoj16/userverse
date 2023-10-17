@@ -44,10 +44,16 @@ export const UserPage = (): JSX.Element => {
 
     return (
         <>
-            <header>
+            <section className="section-top">
                 <h1 className="header-title">Discover our users</h1>
-                <button type="button" className="btn btn-light" onClick={clearNavigate}>Delete filters</button>
-            </header>
+                <div className="filter-container">
+                    <button type="button" className="btn btn-light" onClick={clearNavigate}>Delete filters</button>
+                    <div className="form-check form-switch">
+                        <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
+                        <label className="form-check-label" htmlFor="flexSwitchCheckDefault">See this page with CSS grids</label>
+                    </div>
+                </div>
+            </section>
             {/* section-card-grid */}
             <section className="section-card-flex">
                 {users.map((user) => (
