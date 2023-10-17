@@ -3,17 +3,30 @@
 .nav-container {
     display: flex;
     justify-content: space-between;
-    padding: 10px;
+    align-items: center;
+    margin: 20px;
 
     .logo {
-        width: 150px;
+        font-family: Montserrat;
+        font-weight: 900;
+        font-size: 30px;
+        font-style: italic;
+        text-decoration: none;
+        color: $tertiary;
+        margin-left: 40px;
+        text-shadow: 1px 1px #FFFFFF;
+        transition: 0.3s;
+
+        &:hover {
+            color: $white;
+            transition: 0.4s;
+        }
     }
 
     .nav-list {
-        width: 40%;
+        margin: 0;
         list-style: none;
         display: flex;
-        align-items: center;
         justify-content: space-around;
 
         a {

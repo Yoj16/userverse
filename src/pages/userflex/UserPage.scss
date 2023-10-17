@@ -1,0 +1,32 @@
+@import '../../main.scss';
+
+.section-card-flex {
+    display: flex;
+    margin: 50px 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.section-top {
+    margin: 50px 30px;
+    .header-title {
+        text-align: center;
+        font-family: Montserrat;
+        font-weight: 600;
+        color: $white;
+    }
+
+    .filter-container {
+        margin-top: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        button, 
+        div {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    }
+}

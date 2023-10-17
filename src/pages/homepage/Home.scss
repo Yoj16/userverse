@@ -1,13 +1,36 @@
 @import '../../main.scss';
 
 .container {
-  margin: 100px 50px;
-  font-family: Montserrat;
+  margin-top: 200px;
   font-weight: 700;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
   .home-title {
     align-items: center;
     color: $white;
+    font-family: Montserrat;
+    font-weight: 700;
     font-size: 34px;
+    margin-bottom: 100px;
+    text-shadow: 5px 5px $primary;
+  }
+
+  .search-block {
+    font-family: Hind;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+
+    h2 {
+      color: $white;
+      font-size: 28px;
+      font-family: Montserrat;
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
   }
 }
