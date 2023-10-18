@@ -3,7 +3,7 @@ import Card from "../../components/card/Card";
 import { filterUsers, getPictures, getUsers, mapAndSaveUsers } from '../../services/userService';
 import './UserFlex.scss'
 import './UserGrid.scss'
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Toggle } from "../../components/toggle/Toggle";
 
 type User = {
@@ -19,6 +19,7 @@ export const UserPage = (): JSX.Element => {
   const [users, setUsers] = useState<User[]>([]);
   const [isChecked, setIsChecked] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const fetching = () => {
     debugger
@@ -46,6 +47,10 @@ export const UserPage = (): JSX.Element => {
   const checkChange = () => {
     setIsChecked(!isChecked);
   }
+
+  const createUser = () => {
+    navigate('/create-users');
+  }
     
   useEffect(() => {
     fetching();
@@ -57,12 +62,22 @@ export const UserPage = (): JSX.Element => {
         <h1 className="header-title">Discover our users</h1>
         <div className="filter-container">
           <button 
-            type="button" 
-            className="btn btn-light" 
-            onClick={clearNavigate}
+              type="button" 
+              className="btn btn-light" 
+              onClick={createUser}
           >
-            Delete filters
+            Create a user
           </button>
+          {(location.state.userValue || location.state.cityValue) ? 
+            <button 
+              type="button" 
+              className="btn btn-light" 
+              onClick={clearNavigate}
+            >
+              Delete filters
+            </button>
+            : null
+          }
           <Toggle checkChange={checkChange} isChecked={isChecked}/>
         </div>
       </section>
@@ -79,6 +94,7 @@ export const UserPage = (): JSX.Element => {
             className={isChecked ? "card-grid" : ""}
           />
         ))}
+        {}
       </section>
     </>
   )

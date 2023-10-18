@@ -4,6 +4,7 @@ import { Home } from './pages/homepage/Home';
 import { UserPage } from './pages/userpage/UserPage';
 import { NotFound } from './pages/NotFound';
 import NavBar from './components/navbar/NavBar';
+import { CreateUser } from './pages/create/CreateUser';
 import 'bootstrap/dist/css/bootstrap.css';
 
 export const App = (): JSX.Element => (
@@ -21,6 +22,10 @@ export const App = (): JSX.Element => (
       <Route 
         element={<NotFound />}
         path='*'
+      />
+      <Route 
+        element={<CreateUser />}
+        path='/create-users'
       />
     </Routes>
   </>

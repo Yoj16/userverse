@@ -11,6 +11,9 @@ const NavBar = (): JSX.Element => (
       <li>
         <NavLink to="/users">Our Users</NavLink>
       </li>
+      <li>
+        <NavLink to="/create-users">Create users</NavLink>
+      </li>
     </ul>
   </nav>
 )
