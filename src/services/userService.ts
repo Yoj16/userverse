@@ -3,6 +3,7 @@ import { useState } from "react"
 type User = {
   id: number
   name: string
+  city: string
   description: string
   picture: string
   alt: string
@@ -60,6 +61,7 @@ export const mapAndSaveUsers = (users: ApiUser[], pictures: ApiPicture[]): User[
   users.map((user, index) => ({
     id: user.id, 
     name: user.name, 
+    city: user.address.city,
     description: user.company.catchPhrase,
     picture: pictures[index].download_url,
     alt: pictures[index].author
@@ -71,11 +73,14 @@ export const filterUsers = (users: ApiUser[], pictures: ApiPicture[], filters: F
   
   users.forEach((user: ApiUser, index: number) => {
     const nameLowerCase = user.name.toLowerCase();
+    const cityLowerCase = user.address.city.toLowerCase();
     const filterNameLowerCase = filters.userValue.toLowerCase();
-    if(nameLowerCase.includes(filterNameLowerCase)) {
+    const filterCityLowerCase = filters.cityValue.toLowerCase();
+    if(nameLowerCase.includes(filterNameLowerCase) && cityLowerCase.includes(filterCityLowerCase)) {
       filterUsers.push({
         id: user.id, 
         name: user.name, 
+        city: user.address.city,
         description: user.company.catchPhrase,
         picture: pictures[index].download_url,
         alt: pictures[index].author

@@ -13,6 +13,7 @@ export const FilterForm: FC<FilterFormProps> = ({}) => {
   const navigate = useNavigate();
 
   const searchUser = () => {
+    debugger
     navigate('/users', {state: {userValue: userValue, cityValue: cityValue}});
   }
 
