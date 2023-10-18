@@ -10,6 +10,7 @@ type User = {
   id: number
   name: string
   description: string
+  city: string
   picture: string
   alt: string
 }
@@ -20,9 +21,11 @@ export const UserPage = (): JSX.Element => {
   const location = useLocation();
 
   const fetching = () => {
+    debugger
     getUsers().then((users) => {
       getPictures().then((pictures) => {
         if (location.state !== null && (location.state.userValue || location.state.cityValue)) {
+          debugger
           const filters = {
               userValue: location.state.userValue,
               cityValue: location.state.cityValue
@@ -31,7 +34,6 @@ export const UserPage = (): JSX.Element => {
         } else {
           setUsers(mapAndSaveUsers(users, pictures));
         }
-        console.log(mapAndSaveUsers(users, pictures));
       })
     })
   }
@@ -71,6 +73,7 @@ export const UserPage = (): JSX.Element => {
             title={user.name}
             url={user.picture}
             alt={user.alt}
+            city={user.city}
             key={user.id}
             description={user.description}
             className={isChecked ? "card-grid" : ""}
