@@ -22,11 +22,9 @@ export const UserPage = (): JSX.Element => {
   const navigate = useNavigate();
 
   const fetching = () => {
-    debugger
     getUsers().then((users) => {
       getPictures().then((pictures) => {
         if (location.state !== null && (location.state.userValue || location.state.cityValue)) {
-          debugger
           const filters = {
               userValue: location.state.userValue,
               cityValue: location.state.cityValue
@@ -51,6 +49,8 @@ export const UserPage = (): JSX.Element => {
   const createUser = () => {
     navigate('/create-users');
   }
+
+  const hasFilter = location.state && (('userValue' in location.state && location.state.userValue) || ('cityValue' in location.state && location.state.cityValue));
     
   useEffect(() => {
     fetching();
@@ -68,7 +68,7 @@ export const UserPage = (): JSX.Element => {
           >
             Create a user
           </button>
-          {(location.state.userValue || location.state.cityValue) ? 
+          {hasFilter &&
             <button 
               type="button" 
               className="btn btn-light" 
@@ -76,7 +76,6 @@ export const UserPage = (): JSX.Element => {
             >
               Delete filters
             </button>
-            : null
           }
           <Toggle checkChange={checkChange} isChecked={isChecked}/>
         </div>
