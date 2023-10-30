@@ -9,27 +9,37 @@ type User = {
   alt: string
 }
 
-type ApiUser = {
+export type ApiUser = {
   id: number
   name: string
-  username: string
-  email: string
+  username?: string
+  email?: string
   address: {
-    street: string
-    suite: string
+    street?: string
+    suite?: string
     city: string
-    zipcode: string
-    geo: {
-      lat: string
-      lng: string
+    zipcode?: string
+    geo?: {
+      lat?: string
+      lng?: string
     }
   },
-  phone: string
-  website: string
+  phone?: string
+  website?: string
   company: {
-    name: string
+    name?: string
     catchPhrase: string
-    bs: string
+    bs?: string
+  }
+}
+
+export type NewApiUser = {
+  name: string
+  address: {
+    city: string
+  },
+  company: {
+    catchPhrase: string
   }
 }
 
@@ -48,9 +58,17 @@ type FilterUsers = {
 }
 
 export const getUsers = async (): Promise<ApiUser[]> => {
-  const response =  await fetch('https://jsonplaceholder.typicode.com/users')
+  const response = await fetch('https://jsonplaceholder.typicode.com/users')
   return response.json();
 };
+
+export const createUser = async(data: NewApiUser): Promise<ApiUser> => {
+  const response  = await fetch('https://jsonplaceholder.typicode.com/users', {
+    method: 'POST',
+    body: JSON.stringify(data)
+  });
+  return response.json();
+}
 
 export const getPictures = async (): Promise<ApiPicture[]> => {
   const response = await fetch('https://picsum.photos/v2/list?page=1&limit=10')
